@@ -3,7 +3,7 @@ import HistoryTransaction from "@/components/views/HistoryTransaction";
 
 const transaction = () => {
   return (
-    <LandingPageLayout title="Top Up">
+    <LandingPageLayout title="Transaction History">
       <HistoryTransaction />
     </LandingPageLayout>
   );
