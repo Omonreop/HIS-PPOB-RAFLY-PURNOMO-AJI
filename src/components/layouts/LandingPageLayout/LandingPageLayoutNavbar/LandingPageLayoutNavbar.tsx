@@ -15,7 +15,6 @@ const LandingPageLayoutNavbar = () => {
 
   return (
     <Navbar maxWidth="lg" isBordered isBlurred={false} shouldHideOnScroll>
-      {/* Kiri: Logo */}
       <NavbarBrand
         as={Link}
         href="/"
@@ -31,7 +30,6 @@ const LandingPageLayoutNavbar = () => {
         <p className="text-black font-semibold">SIMS PPOB</p>
       </NavbarBrand>
 
-      {/* Kanan: Navigasi */}
       <NavbarContent justify="end" className="gap-6">
         {NAV_ITEMS.map((item) => (
           <NavbarItem

@@ -12,7 +12,7 @@ const HomeService = (props: PropTypes) => {
   const { services, isLoading } = props;
 
   return isLoading ? (
-    <div className="flex  gap-9 mt-4">
+    <div className="flex  gap-9 ">
       {Array.from({ length: 12 }).map((_, i) => (
         <div key={i} className="flex flex-col items-center gap-4">
           <div className="w-10 h-10 bg-gray-200 animate-pulse rounded-full" />
@@ -21,7 +21,7 @@ const HomeService = (props: PropTypes) => {
       ))}
     </div>
   ) : (
-    <div className="flex flex-wrap gap-4 mt-4">
+    <div className="flex flex-wrap gap-4 ">
       {services.map((service) => (
         <Link
           key={service.service_code}
