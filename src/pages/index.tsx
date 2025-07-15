@@ -1,13 +1,12 @@
-import { Button } from "@heroui/react";
-import { signOut } from "next-auth/react";
+import LandingPageLayout from "@/components/layouts/LandingPageLayout";
+import Home from "@/components/views/Home";
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-500"></div>
-      <Button onPress={() => signOut()}>Logout</Button>
-    </div>
+    <LandingPageLayout title="Home">
+      <Home />
+    </LandingPageLayout>
   );
 };
 
-export default Home;
+export default HomePage;

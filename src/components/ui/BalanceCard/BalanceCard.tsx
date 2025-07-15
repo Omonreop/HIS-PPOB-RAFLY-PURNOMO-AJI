@@ -14,13 +14,13 @@ const BalanceCard = ({
       className="relative w-full max-w-md rounded-xl overflow-hidden text-white px-6 py-4"
       style={{
         backgroundColor: "#EF4444", // fallback merah
-        backgroundImage: `url("/images/general/saldo-bg.png")`,
+        backgroundImage: `url("/images/ilustration/Background-Saldo.png")`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "right bottom",
       }}
     >
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-1 z-10 relative">
         <span className="text-sm">Saldo anda</span>
         <span className="text-2xl font-bold tracking-wide">
           {isHidden ? "Rp ••••••••" : balance}
