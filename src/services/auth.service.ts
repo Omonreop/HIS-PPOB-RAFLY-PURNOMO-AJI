@@ -2,6 +2,12 @@ import instance from "@/libs/axios/instance";
 import endpoint from "./endpoint.constant";
 import { ILogin, IRegister, IUpdateProfile } from "@/types/Auth";
 
+const formDataHeader = {
+  headers: {
+    "Content-Type": "multipart/form-data",
+  },
+};
+
 const authServices = {
   register: (payload: IRegister) =>
     instance.post(`${endpoint.REGISTER}`, payload),
@@ -16,6 +22,8 @@ const authServices = {
   updateProfile: (payload: IUpdateProfile) =>
     instance.put(`${endpoint.UPDATE_PROFILE}`, payload),
   getBalance: () => instance.get(`${endpoint.BALANCE}`),
+  uploadAvatar: (payload: FormData) =>
+    instance.put(endpoint.PROFILE_IMAGE, payload, formDataHeader),
 };
 
 export default authServices;

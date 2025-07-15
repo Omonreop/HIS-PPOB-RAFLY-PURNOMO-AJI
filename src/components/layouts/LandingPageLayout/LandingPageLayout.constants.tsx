@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Akun",
-    href: "/Akun",
+    href: "/akun",
   },
 ];
 
