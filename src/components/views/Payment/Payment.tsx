@@ -13,8 +13,9 @@ const Payment = () => {
     serviceCode: service?.service_code,
   });
 
-  if (isLoading) return <p className="text-center mt-10">Loading...</p>;
-  if (isError || !service)
+  if (isLoading || !service)
+    return <p className="text-center mt-10">Loading...</p>;
+  if (isError)
     return (
       <p className="text-center mt-10 text-red-500">Gagal memuat layanan</p>
     );

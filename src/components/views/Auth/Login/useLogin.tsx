@@ -35,10 +35,11 @@ const useLogin = () => {
     const result = await signIn("credentials", {
       ...payload,
       redirect: false,
-      callbackUrl,
     });
-    if (result?.error && result?.status === 401) {
-      throw new Error("Login failed");
+    if (result?.ok) {
+      router.push("/");
+    } else {
+      throw new Error(result?.error || "Login gagal, periksa email & password");
     }
   };
 

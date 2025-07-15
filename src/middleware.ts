@@ -9,7 +9,7 @@ export async function middleware(request: NextRequest) {
     secret: environment.AUTH_SECRET,
   });
 
-  const { pathname } = request.nextUrl;
+  const { pathname, search } = request.nextUrl;
 
   const isAuthPage =
     pathname.startsWith("/auth/login") || pathname.startsWith("/auth/register");
@@ -21,7 +21,13 @@ export async function middleware(request: NextRequest) {
 
   if (isProtectedPage && !token) {
     const loginUrl = new URL("/auth/login", request.url);
-    loginUrl.searchParams.set("callbackUrl", encodeURIComponent(request.url));
+
+    const relativeCallback = pathname + search;
+
+    if (!request.nextUrl.searchParams.has("callbackUrl")) {
+      loginUrl.searchParams.set("callbackUrl", relativeCallback);
+    }
+
     return NextResponse.redirect(loginUrl);
   }
 
