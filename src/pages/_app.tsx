@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
 import { onErrorHandler } from "@/libs/axios/responseHandler";
 import { ToasterProvider } from "@/contexts/ToasterContext";
-import AppShell from "@/commons/AppShell";
+import AppShell from "@/components/commons/AppShell";
 
 const queryClient = new QueryClient({
   defaultOptions: {

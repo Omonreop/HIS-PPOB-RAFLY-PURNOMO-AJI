@@ -31,18 +31,15 @@ export default NextAuth({
           password,
         });
 
-        const accessToken = result.data.data;
+        const accessToken = result.data.data.token;
 
         const me = await authServices.getProfileWithToken(accessToken);
         const user = me.data.data;
-
-        if (
-          accessToken &&
-          result.status === 200 &&
-          user.first_name &&
-          me.status === 200
-        ) {
+        console.log(user);
+        console.log(accessToken);
+        if (accessToken && user?.email) {
           user.accessToken = accessToken;
+
           return user;
         } else {
           return null;

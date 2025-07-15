@@ -17,9 +17,9 @@ const Toaster = (props: PropTypes) => {
     <div
       role="alert"
       aria-label="toaster-label"
-      className="fixed right-8 top-8 z-50 max-w-xs rounded-xl border border-gray-200 bg-white shadow-sm"
+      className="fixed left-12 bottom-7 z-50 max-w-xs rounded-lg border border-gray-200 bg-white shadow-sm"
     >
-      <div className="flex items-center gap-2 p-2">
+      <div className="flex items-center gap-2 p-1">
         {iconList[type]}
         <p id="toaster-label" className="text-sm text-gray-700">
           {message}
