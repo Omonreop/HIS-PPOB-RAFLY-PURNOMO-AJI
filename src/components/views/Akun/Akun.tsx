@@ -4,6 +4,7 @@ import { Controller } from "react-hook-form";
 import { useEffect, useState } from "react";
 import useAkun from "./useAkun";
 import InputAvatar from "@/components/ui/InputFile";
+import { signOut } from "next-auth/react";
 
 const Akun = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -124,7 +125,15 @@ const Akun = () => {
           )}
         </Button>
       </form>
-      <Button variant="bordered" className="w-full border-red-500 text-red-500">
+      <Button
+        onPress={() =>
+          signOut({
+            callbackUrl: "/auth/login",
+          })
+        }
+        variant="bordered"
+        className="w-full border-red-500 text-red-500"
+      >
         Logout
       </Button>
     </div>
