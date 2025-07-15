@@ -13,7 +13,7 @@ const BalanceCard = ({
     <div
       className="relative w-full max-w-md rounded-xl overflow-hidden text-white px-6 py-4"
       style={{
-        backgroundColor: "#EF4444", // fallback merah
+        backgroundColor: "#EF4444",
         backgroundImage: `url("/images/ilustration/Background-Saldo.png")`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",

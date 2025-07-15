@@ -1,7 +1,14 @@
+import HomeService from "./HomeService";
+import useHome from "./useHome";
+
 const Home = () => {
+  const { dataServices, isLoadingServices } = useHome();
   return (
     <div>
-      <h1>Hello World</h1>
+      <HomeService
+        services={dataServices?.data}
+        isLoading={isLoadingServices}
+      />
     </div>
   );
 };

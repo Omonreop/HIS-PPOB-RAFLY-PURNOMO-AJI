@@ -10,7 +10,6 @@ const LandingPageHero = () => {
   const { dataProfile, dataBalance } = useLandingPageHero();
   return (
     <section className="flex flex-row  justify-between items-start md:items-center gap-4 py-6 px-[10rem]">
-      {/* Kiri: Avatar dan Nama */}
       <div className="flex flex-col items-start gap-4">
         <Image
           src={dataProfile?.profile_image}
@@ -25,7 +24,6 @@ const LandingPageHero = () => {
         </div>
       </div>
 
-      {/* Kanan: BalanceCard */}
       <div className="w-full md:max-w-sm">
         <BalanceCard
           balance={convertIDR(dataBalance?.balance)}
